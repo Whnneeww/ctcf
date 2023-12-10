@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>式の計算</title>
+</head>
+<body>
+  <label for="expression">式を入力してください:</label>
+  <input type="text" id="expression" placeholder="例: 2 + 3 * 4">
+
+  <button onclick="calculateExpression()">計算</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculateExpression() {
+      // 式を取得
+      var expression = document.getElementById("expression").value;
+
+      try {
+        // 式を評価
+        var result = eval(expression);
+
+        // 結果を表示
+        document.getElementById("result").innerHTML = "結果: " + result;
+      } catch (error) {
+        // エラーメッセージを表示
+        document.getElementById("result").innerHTML = "エラー: " + error.message;
+      }
+    }
+  </script>
+</body>
+</html>
